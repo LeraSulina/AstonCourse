@@ -14,7 +14,7 @@ public class MTS_Auto {
     @BeforeAll
     static void setup(){
         driver= WebDriverManager.chromedriver().create();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://mts.by");
         driver.findElement(By.className("cookie__buttons"));
         WebElement cookieYes = driver.findElement(By.id("cookie-agree"));
