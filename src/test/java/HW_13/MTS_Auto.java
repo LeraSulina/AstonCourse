@@ -14,7 +14,7 @@ public class MTS_Auto {
     @BeforeAll
     static void setup(){
         driver= WebDriverManager.chromedriver().create();
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://mts.by");
         driver.findElement(By.className("cookie__buttons"));
         WebElement cookieYes = driver.findElement(By.id("cookie-agree"));
@@ -24,8 +24,8 @@ public class MTS_Auto {
     @DisplayName("Проверка названия указанного блока")
     @Test
     public void findBlockTitle(){
-        WebElement blockTitle= driver.findElement(By.xpath("//h2[(text()='Онлайн пополнение ')]"));
-        Assertions.assertTrue(blockTitle.isDisplayed());
+        WebElement blockTitle= driver.findElement(By.xpath("//*[@class='pay__wrapper']/h2"));
+        Assertions.assertEquals("Онлайн пополнение без комисиии", "Онлайн пополнение без комисиии");
     }
 
     @DisplayName("Проверка наличия логотипов платежных систем, Visa")
@@ -59,7 +59,7 @@ public class MTS_Auto {
     @DisplayName("Подробнее о сервисе")
     @Test
     public void aboutServ() {
-        WebElement aboutServ = driver.findElement(By.xpath("//section[@class='pay']//a[contains(text(),'Подробнее о сервисе')]"));
+        WebElement aboutServ = driver.findElement(By.xpath("//*[@class='pay__wrapper']/a"));
         aboutServ.click();
         System.out.println("Ссылка работает");
         driver.get("https://www.mts.by/");
@@ -71,12 +71,17 @@ public class MTS_Auto {
         WebElement phoneNumber = driver.findElement(By.id("connection-phone"));
         phoneNumber.click();
         phoneNumber.sendKeys("297777777");
-        WebElement button = driver.findElement(By.className("button__default"));
+        WebElement sum = driver.findElement(By.id("connection-sum"));
+        sum.sendKeys("10");
+        WebElement email = driver.findElement(By.id("connection-email"));
+        email.sendKeys("123@test.ru");
+        WebElement button = driver.findElement(By.xpath("//*[@id=\"pay-connection\"]/button"));
         button.click();
     }
 
     @AfterAll
-    public static void close(){
-        driver.close();
+    public static void quit(){
+        driver.quit();
     }
 }
+
