@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MTS_Auto {
@@ -26,6 +27,14 @@ public class MTS_Auto {
     public void findBlockTitle(){
         WebElement blockTitle= driver.findElement(By.xpath("//*[@class='pay__wrapper']/h2"));
         Assertions.assertEquals("Онлайн пополнение без комисиии", "Онлайн пополнение без комисиии");
+    }
+
+    @DisplayName("Проверка наличия логотипов платежных систем")
+    @Test
+    public void  checkImgPay(){
+        List<WebElement> imgPay = driver.findElements(By.xpath("//*[@class=\"pay__partners\"]/ul/li"));
+        int elementCount = imgPay.size();
+        System.out.println("Наличие логотипов платежных систем: "+ elementCount);
     }
 
     @DisplayName("Проверка наличия логотипов платежных систем, Visa")
