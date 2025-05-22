@@ -8,20 +8,20 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Auto2 {
+public class MtsMainPage2Test_HW14 {
     public static WebDriver driver;
-    public static MtsMainPage2 mtsMainPage2;
-    public static MtsMainPage mtsMainPage;
+    public static MtsMainPage_HW14 mtsMainPage2;
+    public static MtsMainPage_HW13 mtsMainPage;
     public static final String URL ="http://mts.by";
 
     @BeforeAll
     public static void setup(){
         driver= WebDriverManager.chromedriver().create();
-        mtsMainPage2 = new MtsMainPage2(driver);
-        mtsMainPage = new MtsMainPage(driver);
+        mtsMainPage2 = new MtsMainPage_HW14(driver);
+        mtsMainPage = new MtsMainPage_HW13(driver);
         driver.manage().window().maximize();
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         mtsMainPage.clickAccept();
     }
 

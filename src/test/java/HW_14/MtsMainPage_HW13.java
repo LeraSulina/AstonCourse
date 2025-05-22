@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MtsMainPage {
+public class MtsMainPage_HW13 {
     public WebElement mtsPayFram;
     By CookiesLocator = By.id("cookie-agree");
 
@@ -25,21 +25,24 @@ public class MtsMainPage {
     By continueBtn = By.xpath("//*[@id=\"pay-connection\"]/button");
     public final WebDriver driver;
 
-    public MtsMainPage(WebDriver driver) {
+    public MtsMainPage_HW13(WebDriver driver) {
         this.driver = driver;
     }
     /**
      * Принять куки
      */
-    public MtsMainPage clickAccept(){
+    public MtsMainPage_HW13 clickAccept(){
         driver.findElement(CookiesLocator).click();
         return this;
     }
-
+    public String getBlockTitleName(){
+        WebElement BlockTitleName = driver.findElement(BlockTitle);
+        return BlockTitleName.getText().replaceAll("\n|\r\n", " ");
+    }
     /**
      *Проверка логотипа платежной системы Visa
      */
-    public MtsMainPage imgVisa(){
+    public MtsMainPage_HW13 imgVisa(){
         WebElement Visa = driver.findElement(imgPayVisa);
         Assertions.assertTrue(Visa.isDisplayed());
         return this;
@@ -47,7 +50,7 @@ public class MtsMainPage {
     /**
      *Проверка логотипа платежной системы Verified_Visa
      */
-    public MtsMainPage imgVerifiedVisa(){
+    public MtsMainPage_HW13 imgVerifiedVisa(){
         WebElement VerifiedVisa = driver.findElement(imgPayVerifiedVisa);
         Assertions.assertTrue(VerifiedVisa.isDisplayed());
         return this;
@@ -55,7 +58,7 @@ public class MtsMainPage {
     /**
      *Проверка логотипа платежной системы MasterCard
      */
-    public MtsMainPage imgMasterCard(){
+    public MtsMainPage_HW13 imgMasterCard(){
         WebElement MasterCard = driver.findElement(imgPayMasterCard);
         Assertions.assertTrue(MasterCard.isDisplayed());
         return this;
@@ -63,7 +66,7 @@ public class MtsMainPage {
     /**
      *Проверка логотипа платежной системы Белкарт
      */
-    public MtsMainPage imgBelcart(){
+    public MtsMainPage_HW13 imgBelcart(){
         WebElement Belcart = driver.findElement(imgPayBelcart);
         Assertions.assertTrue(Belcart.isDisplayed());
         return this;
@@ -71,14 +74,14 @@ public class MtsMainPage {
     /**
      *Переход по ссылке "Подробнее о сервисе"
      */
-    public MtsMainPage aboutServ(){
+    public MtsMainPage_HW13 aboutServ(){
         driver.findElement(aboutServLink).click();
         return this;
     }
     /**
      *Заполнить поле "Номер телефона"
      */
-    public MtsMainPage fillInPhoneField(String PhoneNumber){
+    public MtsMainPage_HW13 fillInPhoneField(String PhoneNumber){
         driver.findElement(phoneNumberField).click();
         driver.findElement(phoneNumberField).sendKeys(PhoneNumber);
         return this;
@@ -86,7 +89,7 @@ public class MtsMainPage {
     /**
      *Заполнить поле "Сумма"
      */
-    public MtsMainPage fillInSumField (String Summ){
+    public MtsMainPage_HW13 fillInSumField (String Summ){
         driver.findElement(sumField).click();
         driver.findElement(sumField).sendKeys(Summ);
         return this;
@@ -94,7 +97,7 @@ public class MtsMainPage {
     /**
      *Заполнить поле "Email"
      */
-    public MtsMainPage fillInEmailField (String Email){
+    public MtsMainPage_HW13 fillInEmailField (String Email){
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(Email);
         return this;
@@ -102,7 +105,7 @@ public class MtsMainPage {
     /**
      *Кликнуть на кнопку "Продолжить"
      */
-    public MtsMainPage clickBtn (){
+    public MtsMainPage_HW13 clickBtn (){
         driver.findElement(continueBtn).click();
         return this;
     }

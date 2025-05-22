@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MtsMainPage2 {
+public class MtsMainPage_HW14 {
 
     By accordionBtn = By.xpath("//section/div/div[1]/div[1]/div[2]/button");
 
@@ -33,13 +33,13 @@ public class MtsMainPage2 {
 
     public final WebDriver driver;
 
-    public MtsMainPage2 (WebDriver driver) {
+    public MtsMainPage_HW14(WebDriver driver) {
         this.driver = driver;
     }
     /**
      * Выбор варианта оплаты "Услуги связи"
      */
-    public MtsMainPage2 selectConnServ(){
+    public MtsMainPage_HW14 selectConnServ(){
         driver.findElement(accordionBtn).click();
         driver.findElement(connServBtn).click();
         System.out.println("Выбран вариант оплаты 'Услуги связи'");
@@ -48,7 +48,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Услуги связи" > Номер телефона
      */
-    public MtsMainPage2 getConnServPlaceholderPhone(){
+    public MtsMainPage_HW14 getConnServPlaceholderPhone(){
         String actPhoneConn = driver.findElement(connPhone).getAttribute("placeholder");
         Assertions.assertEquals("Номер телефона", actPhoneConn);
         return this;
@@ -56,7 +56,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Услуги связи" > Сумма
      */
-    public MtsMainPage2 getConnPlaceholderSumm(){
+    public MtsMainPage_HW14 getConnPlaceholderSumm(){
         String actSummConn = driver.findElement(connSumm).getAttribute("placeholder");
         Assertions.assertEquals(ExpSumm, actSummConn);
         return this;
@@ -64,7 +64,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Услуги связи" > Email
      */
-    public MtsMainPage2 getConnPlaceholderEmail(){
+    public MtsMainPage_HW14 getConnPlaceholderEmail(){
         String actEmailConn = driver.findElement(connEmail).getAttribute("placeholder");
         Assertions.assertEquals(ExpEmail, actEmailConn);
         return this;
@@ -72,7 +72,7 @@ public class MtsMainPage2 {
     /**
      * Выбор варианта оплаты "Домашний интнернет"
      */
-    public MtsMainPage2 selectHomeInternet(){
+    public MtsMainPage_HW14 selectHomeInternet(){
         driver.findElement(accordionBtn).click();
         driver.findElement(homeInternet).click();
         System.out.println("Выбран вариант оплаты 'Домашний интернет'");
@@ -81,7 +81,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Домашний интернет" > Номер абонента
      */
-    public MtsMainPage2 getHomePlaceholderPhone(){
+    public MtsMainPage_HW14 getHomePlaceholderPhone(){
         String actHomePhone = driver.findElement(homePhone).getAttribute("placeholder");
         Assertions.assertEquals("Номер абонента", actHomePhone);
         return this;
@@ -89,7 +89,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Домашний интернет" > Сумма
      */
-    public MtsMainPage2 getHomePlaceholderSumm(){
+    public MtsMainPage_HW14 getHomePlaceholderSumm(){
         String actHomeSumm = driver.findElement(homeSumm).getAttribute("placeholder");
         Assertions.assertEquals(ExpSumm, actHomeSumm);
         return this;
@@ -97,7 +97,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсходера "Домашний интернет" > Email
      */
-    public MtsMainPage2 getHomePlaceholderEmail(){
+    public MtsMainPage_HW14 getHomePlaceholderEmail(){
         String actHomeEmail = driver.findElement(homeEmail).getAttribute("placeholder");
         Assertions.assertEquals(ExpEmail, actHomeEmail);
         return this;
@@ -105,7 +105,7 @@ public class MtsMainPage2 {
     /**
      * Выбор варианта оплаты "Рассрочка"
      */
-    public MtsMainPage2 selectInstPlane(){
+    public MtsMainPage_HW14 selectInstPlane(){
         driver.findElement(accordionBtn).click();
         driver.findElement(instPlane).click();
         System.out.println("Выбран вариант оплаты 'Рассрочка'");
@@ -114,7 +114,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Рассрочка" > Номер счета
      */
-    public MtsMainPage2 getInstPlaneAccNumber(){
+    public MtsMainPage_HW14 getInstPlaneAccNumber(){
         String actAccNumber = driver.findElement(instPlaneAccNumber).getAttribute("placeholder");
         Assertions.assertEquals("Номер счета на 44", actAccNumber);
         return this;
@@ -122,7 +122,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Рассрочка" > Сумма
      */
-    public MtsMainPage2 getInstPlaneSumm(){
+    public MtsMainPage_HW14 getInstPlaneSumm(){
         String actInstPlaneSumm = driver.findElement(instPlaneSumm).getAttribute("placeholder");
         Assertions.assertEquals(ExpSumm, actInstPlaneSumm);
         return this;
@@ -130,7 +130,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Рассрочка" > Email
      */
-    public MtsMainPage2 getInstPlaneEmail (){
+    public MtsMainPage_HW14 getInstPlaneEmail (){
         String actInstPlaneEmail = driver.findElement(instPlaneEmail).getAttribute("placeholder");
         Assertions.assertEquals(ExpEmail, actInstPlaneEmail);
         return this;
@@ -138,7 +138,7 @@ public class MtsMainPage2 {
     /**
      * Выбор варианта оплаты "Задолженность"
      */
-    public MtsMainPage2 selectDebt(){
+    public MtsMainPage_HW14 selectDebt(){
         driver.findElement(accordionBtn).click();
         driver.findElement(debtBtn).click();
         System.out.println("Выбран вариант оплаты 'Задолженность'");
@@ -147,7 +147,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Задолженность" > Номер счета
      */
-    public MtsMainPage2 getDebtAccNumber(){
+    public MtsMainPage_HW14 getDebtAccNumber(){
         String actDebtAccNumber = driver.findElement(debtAccNumber).getAttribute("placeholder");
         Assertions.assertEquals("Номер счета на 2073", actDebtAccNumber);
         return this;
@@ -155,7 +155,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Задолженность" > Сумма
      */
-    public MtsMainPage2 getDebtSumm(){
+    public MtsMainPage_HW14 getDebtSumm(){
         String actDebtSumm = driver.findElement(debtSumm).getAttribute("placeholder");
         Assertions.assertEquals(ExpSumm, actDebtSumm);
         return this;
@@ -163,7 +163,7 @@ public class MtsMainPage2 {
     /**
      * Получение плейсхолдера "Задолженность" > Email
      */
-    public MtsMainPage2 getDebtEmail (){
+    public MtsMainPage_HW14 getDebtEmail (){
         String actDebtEmail = driver.findElement(debtEmail).getAttribute("placeholder");
         Assertions.assertEquals(ExpEmail, actDebtEmail);
         return this;
