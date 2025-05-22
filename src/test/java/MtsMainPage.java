@@ -1,5 +1,3 @@
-package HW_14;
-
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,7 +33,10 @@ public class MtsMainPage {
         driver.findElement(CookiesLocator).click();
         return this;
     }
-
+    public String getBlockTitleName(){
+        WebElement BlockTitleName = driver.findElement(BlockTitle);
+        return BlockTitleName.getText().replaceAll("\n|\r\n", " ");
+    }
     /**
      *Проверка логотипа платежной системы Visa
      */

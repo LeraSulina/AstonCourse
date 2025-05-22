@@ -1,5 +1,3 @@
-package HW_14;
-
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +31,7 @@ public class MtsMainPage2 {
 
     public final WebDriver driver;
 
-    public MtsMainPage2 (WebDriver driver) {
+    public MtsMainPage2(WebDriver driver) {
         this.driver = driver;
     }
     /**

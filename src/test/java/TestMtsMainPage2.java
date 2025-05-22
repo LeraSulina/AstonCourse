@@ -1,14 +1,12 @@
-package HW_14;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
-public class Auto2 {
+public class TestMtsMainPage2 {
     public static WebDriver driver;
     public static MtsMainPage2 mtsMainPage2;
     public static MtsMainPage mtsMainPage;
@@ -21,7 +19,7 @@ public class Auto2 {
         mtsMainPage = new MtsMainPage(driver);
         driver.manage().window().maximize();
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mtsMainPage.clickAccept();
     }
 
